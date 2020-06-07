@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+// The ConfigService is reponsible for fetching and storing the config for the steamliner app.
+// The detailed implementation is the responsibility of the implementing service.
+// There could be a service for git, s3, azure block, ftp or none
+service Config {
+    // The get request will fetch the config from the provider
+    rpc Get (GetRequest) returns (GetResponse);
+    // The Store request will store the given config on the provider 
+    rpc Store (StoreRequest) returns (StoreResponse);
+}
+
+message GetRequest {}
+
+message GetResponse {}
+
+message StoreRequest {}
+
+message StoreResponse {}
